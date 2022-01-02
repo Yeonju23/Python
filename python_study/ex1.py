@@ -58,3 +58,25 @@ age = 30
 print(f'나의 이름은 {name}입니다. 나이는 {age}입니다.')
 print(f'나는 내년이면 {age+1}살이 된다.')
 
+# 문자열 내장 함수
+a = "hobby"
+print(a.count('b'))
+
+b = "Python is the best choice"
+print(b.find('b'))
+print(b.find('k'))
+
+c = "Life is too short"
+print(c.index('t'))
+
+print(",".join('abcd'))
+
+print(a.upper())
+print(b.lower())
+
+print(b.replace("Life", "Your leg"))
+
+print(b.split())
+
+e = "a:b:c:d"
+print(e.split(':'))
