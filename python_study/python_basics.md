@@ -101,8 +101,65 @@
 - 가장 큰 차이는 값을 변화시킬 수 있는가의 여부
     프로그램이 실행되는 동안 그 값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면 주저없이 튜플을 사용해야 함
     실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다는 리스트를 더 많이 사용
-    
+
 # 5. 딕셔너리 자료형
+딕셔너리: Key 와 Value를 한 쌍으로 갖는 자료형
+딕셔너리의 기본 
+{Key1:Value1, Key2:Value2, Key3:Value3, ...}
+Key와 Value의 쌍 여러 개가 { }로 둘러싸여 있다. 각각의 요소는 Key : Value 형태로 이루어져 있고 쉼표(,)로 구분되어 있다.
+리스트나 튜플처럼 순차적으로 해당 요소값을 구하지 않고 Key와 Value를 얻음
+
+### [딕셔너리 만들 때 주의할 사항]
+딕셔너리에서 Key는 고유한 값이므로 중복되는 Key 값을 설정해 놓으면 하나를 제외한 나머지 것들이 모두 무시된다. 
+-> 동일한 Key가 존재하면 어떤 Key에 해당하는 Value를 불러야 할 지 알 수 없기 때문
+Key에는 리스트를 쓸 수 없다.(튜플은 사용 가능)
+-> 리스트는 그 값이 변할 수 있기 때문
+
+- Key 리스트 만들기(keys)
+    >>> a = {'name': 'pey', 'phone': '0119993323', 'birth': '1118'}
+    >>> a.keys()
+    dict_keys(['name', 'phone', 'birth'])
+    => 딕셔너리 a의 Key만을 모아서 dict_keys 객체를 돌려줌
+    dict_keys 객체는 리스트를 사용하는 것과 차이가 없지만 리스트 고유의 append, insert, pop, removem sort 함수는 수행할 수 없음
+
+    dict_keys 객체를 리스트로 변환  
+        >>> list(a.keys())
+        ['name', 'phone', 'birth']
+
+- Value 리스트 만들기(values)
+    >>> a.values()
+    dict_values(['pey', '0119993323', '1118'])
+
+    Key를 얻는 것과 마찬가지 방법으로 Value만 얻고 싶다면 values 함수를 사용하면 된다. 
+    values 함수를 호출하면 dict_values 객체를 돌려준다.
+
+- Key, Value 쌍 얻기(items)
+    >>> a.items()
+    dict_items([('name', 'pey'), ('phone', '0119993323'), ('birth', '1118')])
+
+    items 함수는 Key와 Value의 쌍을 튜플로 묶은 값을 dict_items 객체로 돌려준다. 
+    dict_values 객체와 dict_items 객체 역시 dict_keys 객체와 마찬가지로 리스트를 사용하는 것과 동일하게 사용할 수 있다.
+
+- Key: Value 쌍 모두 지우기(clear)
+- Key로 Value얻기(get)
+    >>> a = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
+    >>> a.get('name')
+    'pey'
+    >>> a.get('phone')
+    '0119993323'
+
+    딕셔너리 안에 찾으려는 Key 값이 없을 경우 미리 정해 둔 디폴트 값을 대신 가져오게 하고 싶을 때에는 get(x, '디폴트 값')을 사용하면 편리함
+    >>> a.get('foo','bar')
+    'bar'
+
+- 해당 Key가 딕셔너리 안에 있는지 조사하기(in)
+    >>> a = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
+    >>> 'name' in a
+    True
+    >>> 'email' in a
+    False
+
+
 # 6. 집합 자료형
 # 7. 불 자료형
 # 8. 자료형의 값을 저장하는 공간, 변수

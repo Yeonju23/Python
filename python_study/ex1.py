@@ -96,3 +96,18 @@ print(a[2][2][0])
 
 a = [1, 2, 3, ['a', 'b', 'c'], 4, 5]
 print(a[2:5])
+
+#Dictionary
+
+dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
+# a = {1: 'hi'} or a = { 'a': [1,2,3]}
+
+a = {1: 'a'}
+a[2] = 'b'
+print(a)
+
+a['name'] = 'pey'
+print(a)
+
+grade = {'pey': 10, 'julliet': 99}
+print(grade["pey"])
