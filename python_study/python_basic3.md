@@ -55,3 +55,22 @@ ex) add = lambda a,b: a+b
     result = add(3,4)
 
 - lambda 예약어로 만든 함수는 return 명령어가 없어도 결과값을 돌려준다. 
+
+
+### 사용자의 입력과 출력
+사용자 입력
+1. input의 사용
+    input은 입력되는 모든 것을 문자열로 취급
+    ex) a = input()
+2. 프롬프트를 띄워서 사용사즤 입력 받기
+    input("질문 내용 ")
+
+- 큰따옴표로 둘러싸인 문자열은 + 연산과 동일하다.
+    ex) print("life" "is" "too short") == print("life"+"is"+"too short") ==> lifeistoo short
+
+- 문자열 띄어쓰기는 콤마로 한다. 
+    ex) print("life", "is", "too short")
+
+- 한 줄에 결과값 출력하기 
+: 한 줄에 결괏값을 계속 이어서 출력하려면 매개변수 end를 사용해 끝 문자를 지정
+    ex) ...  print(i, end=' ')
